@@ -33,6 +33,8 @@ class HomePageState extends State<HomePage> {
 
       //Bottom NAvigation bar
       bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          selectedLabelStyle: TextStyle(color: Colors.black),
           type: BottomNavigationBarType.fixed,
           elevation: 2,
           currentIndex: _selectedIndex,

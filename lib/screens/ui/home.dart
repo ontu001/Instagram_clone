@@ -27,11 +27,20 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text("Instagram"),
+        title: Row(children: [
+          Text("Instagram"),
+          SizedBox(
+            width: 6,
+          ),
+          Icon(
+            Icons.arrow_downward_sharp,
+            size: 15,
+          )
+        ]),
         actions: [
-          Icon(Icons.add),
-          Padding(padding: EdgeInsets.all(15), child: Icon(Icons.favorite)),
-          Icon(Icons.share),
+          Padding(
+              padding: EdgeInsets.all(15), child: Icon(Icons.favorite_outline)),
+          Icon(Icons.chat_outlined),
         ],
       ),
 
