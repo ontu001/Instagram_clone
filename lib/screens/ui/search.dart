@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:instagram_clone/widgets/search_box.dart';
 
 import '../../widgets/search_grid.dart';
 
@@ -11,22 +12,7 @@ class Search extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Container(
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(10)),
-          child: TextField(
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Search',
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.black,
-                  size: 22,
-                )),
-          ),
-        ),
+        title: SearchBox(),
       ),
 
       body: SearchGrid(),

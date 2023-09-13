@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SearchGrid extends StatelessWidget {
+class ShopGrid extends StatelessWidget {
+  List<Widget> item = [];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -10,7 +12,7 @@ class SearchGrid extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.all(2.0),
-            color: Color.fromARGB(255, 236, 202, 214),
+            color: Colors.blueGrey,
           );
         });
   }
