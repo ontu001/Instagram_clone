@@ -9,7 +9,7 @@ class HomePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: [ 
 //Profile photo and name
         Padding(
           padding: EdgeInsets.only(top: 30, bottom: 15, left: 10),
