@@ -141,7 +141,7 @@ class Profile extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5),
+                    padding: EdgeInsets.only(top: 5),
                     child: Text('Keep your favourite stories on your profile')),
               ],
             ),
@@ -149,19 +149,20 @@ class Profile extends StatelessWidget {
 
           //highlights
           Container(
-            height: 100,
+            height: 80,
+            padding: EdgeInsets.only(left: 12, top: 0),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
                 CircleAvatar(
-                  radius: 30,
+                  radius: 35,
                   child: Image.network(
                     'https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),
                 SizedBox(
-                  width: 10,
+                  width: 5,
                 ),
                 hLight(),
                 hLight(),
