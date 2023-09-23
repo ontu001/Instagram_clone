@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:instagram_clone/widgets/button.dart';
+import 'package:instagram_clone/widgets/highlights.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -126,32 +127,53 @@ class Profile extends StatelessWidget {
             ),
           ),
 
+//additional text
+          Padding(
+            padding: EdgeInsets.only(
+              left: 17,
+              top: 15,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Story highlights',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Text('Keep your favourite stories on your profile')),
+              ],
+            ),
+          ),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
+          //highlights
+          Container(
+            height: 100,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  child: Image.network(
+                    'https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                hLight(),
+                hLight(),
+                hLight(),
+                hLight(),
+                hLight(),
+                hLight(),
+                hLight(),
+                hLight(),
+              ],
+            ),
+          )
         ]),
       ),
     );
