@@ -1,37 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:instagram_clone/tabbar/tab1.dart';
+import 'package:instagram_clone/tabbar/tab2.dart';
+import 'package:instagram_clone/tabbar/tab3.dart';
 import 'package:instagram_clone/widgets/button.dart';
 import 'package:instagram_clone/widgets/highlights.dart';
 
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //appbar
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Row(children: [
-          Icon(Icons.lock),
-          SizedBox(
-            width: 5,
-          ),
-          Text("rohan_rahman"),
-          SizedBox(
-            width: 5,
-          ),
-          Icon(
-            Icons.arrow_downward_sharp,
-            size: 15,
-          )
-        ]),
-        actions: [
-          Padding(padding: EdgeInsets.all(15), child: Icon(Icons.add_box)),
-          Icon(Icons.menu),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        //appbar
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Row(children: [
+            Icon(Icons.lock),
+            SizedBox(
+              width: 5,
+            ),
+            Text("rohan_rahman"),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_downward_sharp,
+              size: 15,
+            )
+          ]),
+          actions: [
+            Padding(padding: EdgeInsets.all(15), child: Icon(Icons.add_box)),
+            Icon(Icons.menu),
+          ],
+        ),
+        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // heading section=============================
           Padding(
             padding: EdgeInsets.all(17.0),
@@ -43,7 +47,7 @@ class Profile extends StatelessWidget {
                   radius: 46,
                   backgroundColor: Colors.grey.shade400,
                 ),
-
+    
                 //post follwers following
                 Expanded(
                   child: Row(
@@ -60,7 +64,7 @@ class Profile extends StatelessWidget {
                           Text('Post')
                         ],
                       ),
-
+    
                       //followers
                       Column(
                         children: [
@@ -72,7 +76,7 @@ class Profile extends StatelessWidget {
                           Text('Followers')
                         ],
                       ),
-
+    
                       //following
                       Column(
                         children: [
@@ -90,7 +94,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-
+    
           //profile and bio
           Padding(
             padding: EdgeInsets.only(left: 17, top: 10, bottom: 20),
@@ -112,7 +116,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-
+    
           //edit and share button
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 17),
@@ -126,8 +130,8 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-
-//additional text
+    
+          //additional text
           Padding(
             padding: EdgeInsets.only(
               left: 17,
@@ -146,7 +150,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-
+    
           //highlights
           Container(
             height: 80,
@@ -155,7 +159,7 @@ class Profile extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: [
                 CircleAvatar(
-                  radius: 35,
+                  radius: 32,
                   child: Image.network(
                     'https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg',
                     fit: BoxFit.cover,
@@ -174,6 +178,35 @@ class Profile extends StatelessWidget {
                 hLight(),
               ],
             ),
+          ),
+    
+    
+    
+    
+    
+    
+    
+    
+          //tab bar
+          TabBar(tabs: [
+            Tab(
+              icon: Icon(Icons.grid_3x3),
+            ),
+    
+            Tab(icon: Icon(Icons.video_call_outlined),),
+            Tab(icon: Icon(Icons.person_2_outlined),)
+          ]),
+
+
+
+
+          //tab bar view
+          Expanded(
+            child: TabBarView(children: [
+            Tab1(),
+            Tab2(),
+            Tab3()
+            ],),
           )
         ]),
       ),
