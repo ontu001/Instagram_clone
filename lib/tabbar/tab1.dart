@@ -10,7 +10,11 @@ class Tab1 extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.all(2.0),
-            color: Color.fromARGB(255, 236, 202, 214),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        'https://images.pexels.com/photos/705075/pexels-photo-705075.jpeg?auto=compress&cs=tinysrgb&w=1600'),
+                    fit: BoxFit.cover)),
           );
         });
   }

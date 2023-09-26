@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:instagram_clone/tabbar/tab1.dart';
 import 'package:instagram_clone/tabbar/tab2.dart';
 import 'package:instagram_clone/tabbar/tab3.dart';
@@ -45,9 +44,10 @@ class Profile extends StatelessWidget {
                 //profile photo
                 CircleAvatar(
                   radius: 46,
-                  backgroundColor: Colors.grey.shade400,
+                  backgroundImage: NetworkImage(
+                      'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/166f66122c499bc8daded90bcaa4833e-1683027548932/f1562857-6b60-48a0-842a-c0493cbfa839.png'),
                 ),
-    
+
                 //post follwers following
                 Expanded(
                   child: Row(
@@ -64,7 +64,7 @@ class Profile extends StatelessWidget {
                           Text('Post')
                         ],
                       ),
-    
+
                       //followers
                       Column(
                         children: [
@@ -76,7 +76,7 @@ class Profile extends StatelessWidget {
                           Text('Followers')
                         ],
                       ),
-    
+
                       //following
                       Column(
                         children: [
@@ -94,7 +94,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-    
+
           //profile and bio
           Padding(
             padding: EdgeInsets.only(left: 17, top: 10, bottom: 20),
@@ -116,7 +116,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-    
+
           //edit and share button
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 17),
@@ -130,7 +130,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-    
+
           //additional text
           Padding(
             padding: EdgeInsets.only(
@@ -150,7 +150,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-    
+
           //highlights
           Container(
             height: 80,
@@ -159,11 +159,10 @@ class Profile extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: [
                 CircleAvatar(
-                  radius: 32,
-                  child: Image.network(
-                    'https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg',
-                    fit: BoxFit.cover,
-                  ),
+                  radius: 27,
+                  backgroundColor: Colors.black,
+                  backgroundImage: NetworkImage(
+                      'https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg'),
                 ),
                 SizedBox(
                   width: 5,
@@ -179,34 +178,25 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-    
-    
-    
-    
-    
-    
-    
-    
+
           //tab bar
           TabBar(tabs: [
             Tab(
               icon: Icon(Icons.grid_3x3),
             ),
-    
-            Tab(icon: Icon(Icons.video_call_outlined),),
-            Tab(icon: Icon(Icons.person_2_outlined),)
+            Tab(
+              icon: Icon(Icons.video_call_outlined),
+            ),
+            Tab(
+              icon: Icon(Icons.person_2_outlined),
+            )
           ]),
-
-
-
 
           //tab bar view
           Expanded(
-            child: TabBarView(children: [
-            Tab1(),
-            Tab2(),
-            Tab3()
-            ],),
+            child: TabBarView(
+              children: [Tab1(), Tab2(), Tab3()],
+            ),
           )
         ]),
       ),

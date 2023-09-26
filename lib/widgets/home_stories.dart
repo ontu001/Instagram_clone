@@ -13,8 +13,15 @@ class HomeStores extends StatelessWidget {
           Container(
             height: 60,
             width: 60,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey,
+              image: DecorationImage(
+                  image: NetworkImage(
+                    'https://www.themodelbuilders.co.uk/wp-content/uploads/2022/02/shutterstock_1562414428.jpg',
+                  ),
+                  fit: BoxFit.cover),
+            ),
           ),
           SizedBox(
             height: 5.0,
